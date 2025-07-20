@@ -26,10 +26,10 @@
 
 ### 📝 Latest Blog Posts
 
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+- [Shift-Left Testing in Action: How I Catch Bugs Early in Agile Projects](https://medium.com/@vimal.surani/shift-left-testing-in-action-how-i-catch-bugs-early-in-agile-projects-f6f5af8fb2bb)
 
-> ✨ This section auto-updates every hour from [Medium](https://medium.com/@vimal.surani)
+
+> 📚 For more, see all blogs here →[Medium](https://medium.com/@vimal.surani).
 
 ---
 
