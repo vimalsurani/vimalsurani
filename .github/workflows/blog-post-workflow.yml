@@ -1,8 +1,12 @@
 name: Latest blog post workflow
+
 on:
   schedule:
-    - cron: '0 * * * *' # every hour
-  workflow_dispatch: # allows manual run
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update-readme-with-blog:
@@ -10,7 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup Git config
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
       - uses: gautamkrishnar/blog-post-workflow@master
         with:
           max_post_count: 5
           feed_list: "https://medium.com/feed/@vimal.surani"
+          commit_message: "Updated with the latest blog posts"
+          committer_username: "github-actions[bot]"
+          committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
