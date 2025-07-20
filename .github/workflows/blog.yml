@@ -1,3 +1,6 @@
+# Create the blog.yml file with the appropriate GitHub Actions workflow content
+
+file_content = """
 name: Latest blog post workflow
 on:
   schedule:
@@ -12,3 +15,10 @@ jobs:
       - uses: gautamkrishnar/blog-post-workflow@master
         with:
           feed_list: "https://medium.com/feed/@vimal.surani"
+"""
+
+file_path = "/mnt/data/blog.yml"
+with open(file_path, "w") as file:
+    file.write(file_content)
+
+file_path
